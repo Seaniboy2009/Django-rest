@@ -17,15 +17,18 @@ class Profile(models.Model):
     class Meta:
         ordering = ['-created_at']
 
+    # Return a string description
     def __str__(self):
         return f'{self.owner}s profile'
+
 
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(owner=instance)
 
+
 '''
-This will listen for a user being created and 
+This will listen for a user being created and
 will call the create profile function
 '''
 post_save.connect(create_profile, sender=User)
