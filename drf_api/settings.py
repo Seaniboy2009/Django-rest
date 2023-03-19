@@ -48,7 +48,7 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
-ALLOWED_HOSTS = ['localhost', 'rest-clark-api.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'https://rest-clark-api.herokuapp.com/']
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer'
@@ -86,6 +86,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'corsheaders',
 
     'profiles',
     'posts',
